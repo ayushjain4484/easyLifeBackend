@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
+    'django_cron',
 ]
 
 REST_FRAMEWORK = {
@@ -67,6 +68,11 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+CRON_CLASSES = [
+    "subscriptions.cron.RenewalCronJob",
+]
+
 
 ROOT_URLCONF = 'easyLifeBackend.urls'
 
