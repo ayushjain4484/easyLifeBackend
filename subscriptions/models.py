@@ -12,6 +12,7 @@ class Subscription(models.Model):
     is_active = models.BooleanField(default=True)
     logo = models.URLField(max_length=255)
     currency = models.CharField(max_length=255, default='EUR')
+    renewal_type = models.CharField(max_length=255, default='monthly')
 
     def __str__(self):
         return self.service
