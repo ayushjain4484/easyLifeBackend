@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from subscriptions import views
+from .views import LoginAPIView
 
 router = DefaultRouter()
 router.register(r'subscriptions', views.SubscriptionViewSet)
@@ -26,4 +27,5 @@ router.register(r'subscriptions', views.SubscriptionViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/login/', LoginAPIView.as_view(), name='login'),
 ]
